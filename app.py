@@ -7,7 +7,7 @@ def home():
     return render_template("About.html")
 @app.route('/about-css')
 def about_css():
-    return render_template('about-css.html')
+    return render_template('about-css.html') #fixed
 
 @app.route("/hello")
 def hello():
