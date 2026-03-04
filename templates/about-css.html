@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me</title>
+  <!-- Link to external css stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <!-- Page header: includes a Level 1 heading and the Smith logo -->
+  <header>
+    <h1>About Me</h1>
+
+    <!-- Robert H. Smith logo using css class "logo" for sizing -->
+    <img
+      src="https://terpconnect.umd.edu/~jbono/bmgt407/images/smith-logo.png"
+      alt="Robert H. Smith School of Business logo"
+      class="logo">
+  </header>
+
+  <!-- Section 1: Intro content with emphasized and important text -->
+  <section>
+    <h2>Background</h2>
+
+    <!-- Paragraph 1 -->
+    <p>
+      I am a student at the University of Maryland, and I enjoy learning about Finance and Technology.
+      <strong>Important:</strong> This page is part of my Flask web application.
+    </p>
+
+    <!-- Paragraph 2 -->
+    <p>
+      In my free time, I like hanging out with friends and watching sports. I am especially interested in going to the gym to improve my <em>physical and mental health.</em>
+      <strong>Important:</strong> make sure to not give up after a week.
+      <em>Patience is key!!!</em>
+    </p>
+
+    <!-- Paragraph 3: additional paragraph with id attribute -->
+    <p id="goals">
+      My long-term goals include pursuing a career in <em>finance and technology</em>, potentially in investment banking or fintech.
+      <strong>Important:</strong> Building a strong foundation in both fields early on is essential to achieving these goals.
+    </p>
+  </section>
+
+  <!-- Section 2: Lists + relative link -->
+  <section>
+    <h2>Quick Facts</h2>
+
+    <!-- Unordered list requirement -->
+    <ul class="highlight-list">
+      <li>I am a college senior</li>
+      <li>I go to the gym everyday</li>
+      <li>I love the Philadelphia Eagles</li>
+    </ul>
+
+    <!-- Ordered list requirement -->
+    <ol>
+      <li>Breakfast</li>
+      <li>Lunch</li>
+      <li>Dinner</li>
+    </ol>
+
+    <!-- Relative hyperlink to /hello route -->
+    <p>
+      Visit my greeting page here:
+      <a href="/hello">Go to Hello</a>
+    </p>
+  </section>
+
+  <!-- Section 3: Table + external links -->
+  <section>
+    <h2>Courses</h2>
+
+    <!-- Course table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Semester Taken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BMGT 407</td>
+          <td>Spring 2026</td>
+        </tr>
+        <tr>
+          <td>BMGT 340</td>
+          <td>Spring 2025</td>
+        </tr>
+        <tr>
+          <td>BMGT 403</td>
+          <td>Fall 2025</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Here are two websites I like:
+      <a href="https://finance.yahoo.com/">Yahoo Finance</a>
+      and
+      <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>.
+    </p>
+  </section>
+
+  <!-- End of page -->
+</body>
+</html>
