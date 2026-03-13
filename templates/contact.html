@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+{% block page_title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+
+        {% if submitted %}
+        <!-- Thank-you message shown after form submission -->
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="alert alert-success">
+                    Thank you, <strong>{{ first_name }}</strong>! We'll be in touch soon.
+                </div>
+                <h5 class="mb-3">What you submitted:</h5>
+                <dl class="row">
+                    <dt class="col-sm-4">First Name</dt>
+                    <dd class="col-sm-8">{{ first_name }}</dd>
+                    <dt class="col-sm-4">Last Name</dt>
+                    <dd class="col-sm-8">{{ last_name }}</dd>
+                    <dt class="col-sm-4">Email</dt>
+                    <dd class="col-sm-8">{{ email }}</dd>
+                    <dt class="col-sm-4">Major</dt>
+                    <dd class="col-sm-8">{{ major }}</dd>
+                </dl>
+                <a href="/contact" class="btn btn-primary">Submit Another</a>
+            </div>
+        </div>
+
+        {% else %}
+        <!-- Contact form shown before submission -->
+        <div class="card">
+            <div class="card-body p-4">
+                <h5 class="card-title mb-4">Get in Touch</h5>
+                <form method="POST" action="/contact">
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name"
+                                   name="first_name" placeholder="Jane" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name"
+                                   name="last_name" placeholder="Terrapin" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email"
+                               name="email" placeholder="jterrapin@terpmail.umd.edu" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="major" class="form-label">Major</label>
+                        <select class="form-select" id="major" name="major" required>
+                            <option value="" disabled selected>Select your major...</option>
+                            <option>Accounting</option>
+                            <option>Finance</option>
+                            <option>Information Systems</option>
+                            <option>Management</option>
+                            <option>Marketing</option>
+                            <option>Supply Chain Management</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
