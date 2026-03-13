@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Favorite Course{% endblock %}
+{% block page_title %}Favorite Course{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+
+        <!-- Quick lookup form -->
+        <div class="card mb-4">
+            <div class="card-body p-4">
+                <h5 class="card-title">Enter a Course</h5>
+                <form method="GET" action="/favorite-course" class="row g-3">
+                    <div class="col-sm-5">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject"
+                               placeholder="e.g. BMGT" value="{{ subject }}">
+                    </div>
+                    <div class="col-sm-5">
+                        <label for="course_number" class="form-label">Course Number</label>
+                        <input type="text" class="form-control" id="course_number" name="course_number"
+                               placeholder="e.g. 407" value="{{ course_number }}">
+                    </div>
+                    <div class="col-sm-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">Go</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Result (only shows when both params are filled) -->
+        {% if subject and course_number %}
+        <div class="alert alert-success" role="alert">
+            You entered your favorite course as: <strong>{{ subject }} {{ course_number }}</strong>
+        </div>
+        {% elif subject or course_number %}
+        <div class="alert alert-warning" role="alert">
+            Please provide both a subject and a course number.
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
