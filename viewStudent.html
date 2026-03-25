@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}View Student{% endblock %}
+{% block content %}
+<h2 class="mb-4">Student Details</h2>
+<div class="card" style="max-width: 500px;">
+    <div class="card-body">
+        <p><strong>ID:</strong> {{ student.id }}</p>
+        <p><strong>First Name:</strong> {{ student.firstName }}</p>
+        <p><strong>Last Name:</strong> {{ student.lastName }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <p><strong>Major:</strong> {{ student.major }}</p>
+        <a href="/students/update/{{ student.id }}" class="btn btn-warning">Edit</a>
+        <a href="/students" class="btn btn-secondary">Back to All Students</a>
+    </div>
+</div>
+{% endblock %}
