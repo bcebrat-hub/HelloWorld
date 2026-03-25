@@ -18,37 +18,52 @@
 
     body { font-family: 'DM Sans', sans-serif; background-color: var(--bg-light); }
 
-    /* Navbar: black background, gold brand, red hover */
+    /* Navbar */
     .navbar { background-color: var(--md-black) !important; border-bottom: 4px solid var(--md-gold); }
     .navbar-brand { font-family: 'DM Serif Display', serif; color: var(--md-gold) !important; }
     .nav-link { color: rgba(255,255,255,0.8) !important; }
     .nav-link:hover { color: var(--md-red) !important; }
 
-    /* Page header: red background, gold accent line */
+    /* Page header */
     .page-header { background-color: var(--md-red); color: var(--md-white); padding: 2.5rem 0; margin-bottom: 2rem; border-bottom: 5px solid var(--md-gold); }
     .page-header h1 { font-family: 'DM Serif Display', serif; }
 
-    /* Cards: gold top border */
+    /* Cards */
     .card { border-top: 3px solid var(--md-gold); border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
     .card-title { color: var(--md-black); font-family: 'DM Serif Display', serif; }
 
-    /* Buttons: red fill, gold hover */
-    .btn-primary { background-color: var(--md-red); border-color: var(--md-red); font-weight: 600; }
+    /* Buttons */
+    .btn-primary   { background-color: var(--md-red);   border-color: var(--md-red);   font-weight: 600; }
     .btn-primary:hover { background-color: var(--md-black); border-color: var(--md-gold); }
+    .btn-warning   { background-color: var(--md-gold);  border-color: var(--md-gold);  font-weight: 600; color: var(--md-black); }
+    .btn-warning:hover { background-color: var(--md-black); border-color: var(--md-gold); color: var(--md-white); }
 
-    /* Footer: black background, gold top border */
+    /* Tables */
+    .table thead { background-color: var(--md-black); color: var(--md-white); }
+    .table-striped > tbody > tr:nth-of-type(odd) { background-color: rgba(253,191,56,0.08); }
+
+    /* Footer */
     footer { background-color: var(--md-black); color: rgba(255,255,255,0.6); text-align: center; padding: 1rem; margin-top: 3rem; border-top: 4px solid var(--md-gold); }
-</style>
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/">SmithApp</a>
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/favorite-course">Favorite Course</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/students">
+                        <i class="bi bi-people-fill me-1"></i>Students</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/students/add">
+                        <i class="bi bi-person-plus-fill me-1"></i>Add Student</a>
+                    </li>
                 </ul>
             </div>
         </div>
