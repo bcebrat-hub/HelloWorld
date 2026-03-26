@@ -1,31 +1,37 @@
 {% extends "base.html" %}
 {% block title %}Update Student{% endblock %}
+{% block page_title %}Update Student{% endblock %}
 {% block content %}
-<h2 class="mb-4">Update Student</h2>
-<div style="max-width: 500px;">
-    <form action="/students/update/{{ student.id }}" method="POST">
-        <div class="mb-3">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName"
-                   maxlength="50" value="{{ student.firstName }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName"
-                   maxlength="50" value="{{ student.lastName }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email"
-                   maxlength="100" value="{{ student.email }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="major" class="form-label">Major</label>
-            <input type="text" class="form-control" id="major" name="major"
-                   maxlength="50" value="{{ student.major }}" required>
-        </div>
-        <button type="submit" class="btn btn-warning">Update Student</button>
-        <a href="/students" class="btn btn-secondary">Cancel</a>
-    </form>
+<div class="card" style="max-width: 550px;">
+    <div class="card-body">
+        <form action="/student/update/{{ student.id }}" method="POST">
+            <div class="mb-3">
+                <label for="firstName" class="form-label fw-semibold">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName"
+                       maxlength="50" value="{{ student.firstName }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label fw-semibold">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName"
+                       maxlength="50" value="{{ student.lastName }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-semibold">Email</label>
+                <input type="email" class="form-control" id="email" name="email"
+                       maxlength="100" value="{{ student.email }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="major" class="form-label fw-semibold">Major</label>
+                <input type="text" class="form-control" id="major" name="major"
+                       maxlength="50" value="{{ student.major }}" required>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-warning">
+                    <i class="bi bi-save me-1"></i>Update Student
+                </button>
+                <a href="/student/view" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

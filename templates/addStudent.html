@@ -1,27 +1,33 @@
 {% extends "base.html" %}
 {% block title %}Add Student{% endblock %}
+{% block page_title %}Add New Student{% endblock %}
 {% block content %}
-<h2 class="mb-4">Add New Student</h2>
-<div style="max-width: 500px;">
-    <form action="/students/add" method="POST">
-        <div class="mb-3">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" maxlength="50" required>
-        </div>
-        <div class="mb-3">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" maxlength="50" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" maxlength="100" required>
-        </div>
-        <div class="mb-3">
-            <label for="major" class="form-label">Major</label>
-            <input type="text" class="form-control" id="major" name="major" maxlength="50" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Student</button>
-        <a href="/students" class="btn btn-secondary">Cancel</a>
-    </form>
+<div class="card" style="max-width: 550px;">
+    <div class="card-body">
+        <form action="/students/create" method="POST">
+            <div class="mb-3">
+                <label for="firstName" class="form-label fw-semibold">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" maxlength="50" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label fw-semibold">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" maxlength="50" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-semibold">Email</label>
+                <input type="email" class="form-control" id="email" name="email" maxlength="100" required>
+            </div>
+            <div class="mb-3">
+                <label for="major" class="form-label fw-semibold">Major</label>
+                <input type="text" class="form-control" id="major" name="major" maxlength="50" required>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-person-plus-fill me-1"></i>Add Student
+                </button>
+                <a href="/student/view" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
