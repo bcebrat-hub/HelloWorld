@@ -52,7 +52,7 @@ def hello_world():
     return "Hello World from Ben Cebrat! I am adding my first code change."
 
 # ---------- CRUD Routes ----------
-@app.route('/students')
+@app.route('/student/view')
 def view_all_students():
     students = Student.query.all()
     return render_template('viewAllStudents.html', students=students)
@@ -62,7 +62,7 @@ def view_student(student_id):
     student = Student.query.get_or_404(student_id)
     return render_template('viewStudent.html', student=student)
 
-@app.route('/students/add', methods=['GET', 'POST'])
+@app.route('/students/create', methods=['GET', 'POST'])
 def add_student():
     if request.method == 'POST':
         new_student = Student(
@@ -76,7 +76,7 @@ def add_student():
         return redirect(url_for('view_all_students'))
     return render_template('addStudent.html')
 
-@app.route('/students/update/<int:student_id>', methods=['GET', 'POST'])
+@app.route('/student/update/<int:student_id>', methods=['GET', 'POST'])
 def update_student(student_id):
     student = Student.query.get_or_404(student_id)
     if request.method == 'POST':
@@ -88,7 +88,7 @@ def update_student(student_id):
         return redirect(url_for('view_all_students'))
     return render_template('updateStudent.html', student=student)
 
-@app.route('/students/delete/<int:student_id>', methods=['POST'])
+@app.route('/student/delete/<int:student_id>', methods=['POST'])
 def delete_student(student_id):
     student = Student.query.get_or_404(student_id)
     db.session.delete(student)
